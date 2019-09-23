@@ -1,5 +1,10 @@
 .something{
-  height: 300px;
+  height: 350px;
   width:50%;
   overflow-y: scroll;
+}
+
+.description{
+
+  position:relative;
 }
