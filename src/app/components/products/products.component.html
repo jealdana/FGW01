@@ -1,112 +1,46 @@
 <!-- cards that will have the products description -->
-<h3 style="text-align:center">Gallery of Brands</h3>
+<h3 style="text-align:center" class="mb-3">Gallery of Technologies used</h3>
 <div class="card-columns">
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
+  <div *ngFor="let element of techonologiesArr" class="card">
+    <img src={{element.imageUrl}} class="card-img-top" alt="..." >
     <div class="card-body">
-      <h5 class="card-title">Card title that wraps to a new line</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title">{{element.title}}</h5>
+      <p class="card-text">{{element.text}}</p>
+    </div>
     </div>
   </div>
-  <div class="card p-3">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card bg-primary text-white text-center p-3">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-      <footer class="blockquote-footer text-white">
-        <small>
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-  <div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-  </div>
-  <div class="card p-3 text-right">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-    </div>
-  </div>
-<div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-</div>
-
+  <hr>
 <!-- Brief description of the products -->
-<h3>List of products by company</h3>
+<h3 style="text-align:center;" class="mb-3">List of products by technology</h3>
 <div class="row">
+  <!-- Main navigation bar -->
   <div class="something">
-    <!-- Navigation bar -->
     <nav id="navbar-catalog" class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" style="width:15%;" href="#">Technologies used</a>
       <nav class="nav nav-pills flex-column">
-        <a class="nav-link" href="#item-4">Brand 4</a>
-
-        <a class="nav-link" href="#item-5">Brand 5</a>
-
+        <a *ngFor="let element of techonologiesArr" class="nav-link" href="#{{element.title}}">{{element.title}}</a>
       </nav>
     </nav>
-    <!-- Navigation bar -->
   </div>
-  <div data-spy="scroll" data-target="#navbar-catalog" data-offset="15" class="something description">
-
-    <nav id="item-4" class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">Brand 4</a>
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="#fat">@fat</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#mdo">@mdo</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#one">one</a>
-            <a class="dropdown-item" href="#two">two</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#three">three</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <div data-spy="scroll" data-target="#item-4" data-offset="0">
+  <!-- Rightside col -->
+  <div data-spy="scroll" data-target="#navbar-catalog" data-offset="20" class="something description" style="width:50%;">
+    <div *ngFor="let element of techonologiesArr" >
+      <!-- Top navbar of Rightside col -->
+      <nav id="{{element.title}}" class="navbar navbar-light bg-light">
+        <a class="navbar-brand text-white" style="width: 100%; background-color:#007bff; text-align:center;" href="#{{element.title}}">{{element.title}}</a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" >@fat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">@mdo</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Sub-elements of main element of Rightside col -->
       <h4 id="fat">@fat</h4>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h5 class="card-title">Card title that wraps to a new line</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -114,100 +48,12 @@
       </div>
       <h4 id="mdo">@mdo</h4>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <h4 id="one">one</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <h4 id="two">two</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <h4 id="three">three</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h5 class="card-title">Card title that wraps to a new line</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
       </div>
     </div>
-
-    <nav id="item-5" class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">Brand 5</a>
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="#5-fat">@fat</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#5-mdo">@mdo</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#5-one">one</a>
-            <a class="dropdown-item" href="#5-two">two</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#5-three">three</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <div data-spy="scroll" data-target="#item-5" data-offset="0">
-      <h4 id="5-fat">@fat</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <h4 id="5-mdo">@mdo</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <h4 id="5-one">one</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <h4 id="5-two">two</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-      <h4 id="5-three">three</h4>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title that wraps to a new line</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>

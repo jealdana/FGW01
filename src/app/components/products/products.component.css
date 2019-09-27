@@ -1,6 +1,5 @@
 .something{
-  height: 350px;
-  width:50%;
+  height: 300px;
   overflow-y: scroll;
 }
 
