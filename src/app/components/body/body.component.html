@@ -1,0 +1,13 @@
+<div *ngIf="mostrar" class="row">
+  <div class="col">
+    <div class="card text-white bg-primary mb-3" style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">{{policy.title}}</h5>
+        <p class="card-text">{{policy.message}}</p>
+      </div>
+    </div>
+    <button *ngIf="mostrar" (click)="mostrar = !mostrar" type="button" name="button" class="btn btn-outline-primary btn-block">
+      Accept
+      </button>
+  </div>
+</div>
